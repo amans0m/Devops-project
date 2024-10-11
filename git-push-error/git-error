@@ -1,0 +1,46 @@
+(venv) root@data:/home/devops/nodejs-python-code# git push -u origin main
+Username for 'https://github.com': som.info0@gmail.com
+Password for 'https://som.info0@gmail.com@github.com':
+To https://github.com/amans0m/Devops-project.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/amans0m/Devops-project.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+
+Follow these steps to fix the issue:
+
+Pull the latest changes from the remote main branch: This will update your local branch with any new commits that have been added remotely.
+
+bash
+Copy code
+
+git pull origin main --rebase
+
+
+This command ensures that your changes will be applied on top of the existing remote changes.
+
+Resolve any merge conflicts (if they arise): If there are merge conflicts, Git will show you the conflicting files. You need to manually resolve these conflicts, then mark them as resolved:
+
+bash
+Copy code
+
+git add .
+
+After resolving the conflicts, you can continue with the rebase process by running:
+
+bash
+Copy code
+
+
+git rebase --continue
+
+Push your changes to the main branch: After the rebase is done, push the changes:
+
+bash
+Copy code
+
+git push -u origin main
